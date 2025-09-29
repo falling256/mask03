@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(cer3)
+project(cer6)
 
 # 设置 C++ 标准
 set(CMAKE_CXX_STANDARD 17)
@@ -48,9 +48,12 @@ set(REQUIRED_LIBS
 
 # 创建主程序可执行文件（test_ceres.cpp）
 add_executable(test_ceres test_ceres.cpp)
+add_executable(test_ceres1 test_ceres1.cpp)
+
 
 # 链接库
 target_link_libraries(test_ceres ${REQUIRED_LIBS})
+target_link_libraries(test_ceres1 ${REQUIRED_LIBS})
 
 # 设置宏定义
 add_definitions(-DDEBUGMODE)
@@ -59,3 +62,4 @@ add_definitions(-DDEBUGMODE)
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
+
