@@ -52,7 +52,6 @@ int main() {
     Scalar upper_hsv(110, 255, 255);
 
     Mat frame, hsv, mask;
-    Mat traj = Mat::zeros(frame_h, frame_w, CV_8UC3); 
     vector<Point2d> points_math;
 
     while (true) {
@@ -82,7 +81,6 @@ int main() {
 
         if (center.x >= 0) {
             points_math.push_back(Point2d(center.x, frame_h - center.y)); 
-            circle(traj, center, 2, Scalar(0, 255, 0), -1);
         }
     }
     cap.release();
@@ -141,7 +139,5 @@ int main() {
     printf("g =   %.6f\n", params[4]);
     printf("k =   %.6f\n", params[5]);
     
-    waitKey(0);
-
     return 0;
 }
